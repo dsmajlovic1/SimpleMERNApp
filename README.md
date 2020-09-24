@@ -6,7 +6,7 @@ This is a simple web application using Facebook Graph API to get personal inform
 
 The project uses the react-facebook-login library that provides the Facebook login button, React framework was used to create the frontend part of the application and Node and Express were used for backend.
 
-The frontend part of the application fetches the data from the API and passes it to the backend that stores the received data locally. After the data is fetched the page is redirected to the "edit" page that loads the local data and saves the changes locally. The saved data is located at /backend/person.json
+The frontend part of the application fetches the data from the API and passes it to the backend that stores the received data locally. After the data is fetched the page is redirected to the "edit" page that loads the local data and saves the changes to the local file. The saved data is located at /backend/person.json
 
 ## How to start the project
 
