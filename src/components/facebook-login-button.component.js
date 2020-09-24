@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
+
 import axios from 'axios';
 
+export default class FacebookLoginButton extends Component {
+    constructor(props){
+        super(props);
 
-const FacebookLoginButton = () => {
+        this.state = {
+            key: process.env.API_KEY
+        }
+    };
 
-    const componentClicked = (data) => {
-        console.log("Data: ", data);
-    }; 
-
-    const responseFacebook = (response) => {
+    responseFacebook(response){
         console.log(response);
         
         axios.post('http://localhost:5000/api/save', response)
@@ -21,19 +24,24 @@ const FacebookLoginButton = () => {
         window.location = "/person";
     };
 
-    return (
-        <div >
-            <FacebookLogin
-                appId="634604950531240"
-                scope="public_profile,email,user_birthday,user_gender,user_posts"
-                fields="name,email,picture,birthday,gender,feed"
-                isDisabled={false}
-                onClick={componentClicked}
-                callback={responseFacebook} 
-            />
-        </div>
-        
-    );
-};
+    onLoginFailed(){
+        console.log("Login failed.");
+    };
 
-export default FacebookLoginButton;
+    render() {
+        return (
+            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+                <FacebookLogin
+                    appId={process.env.REACT_APP_ID}
+                    scope="public_profile,email,user_birthday,user_gender,user_posts"
+                    fields="name,email,picture,birthday,gender,feed"
+                    
+                    isDisabled={false}
+                    callback={this.responseFacebook}
+                    onFailure={this.onLoginFailed} 
+                />
+            </div>
+            
+        );
+    };
+}

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { findByAltText } from '@testing-library/react';
 
 const Post = ({post, deletePost}) => {
     return (
         <tr>
-            <td style={{width: '10%'}}>{post.created_time.substring(0,10)}</td>
-            <td style={{width: '60%'}}>{post.message}</td>
-            <td style={{width: '20%'}}>
+            <td style={{width: '13%'}}>{post.created_time.substring(0,10)}</td>
+            <td style={{width: '55%'}}>{post.message}</td>
+            <td style={{width: '22%'}}>
                 <a href={"https://www.facebook.com/"+post.id}>Visit post on facebook</a>
             </td>
             <td style={{width: '10%'}}>
@@ -134,18 +133,18 @@ export default class Person extends Component {
     };
 
     render(){
+        
         return (
             <div>
-                <div>
-                <h1>Edit person</h1>
+                <div >
+                <h1 className="pt-4">Edit person</h1>
                 </div>
                 <br/>
                 <form onSubmit={this.onSubmit} >
-                    <div className="form-group" >
+                    <div className="form-group"  >
                         <input type="submit" value="Save" className="btn btn-primary" style={{ float: 'right'}}/>
                     </div>
-                    <br/>
-                    <div className="form-group" >
+                    <div className="form-group pt-4" >
                         <label>Name: </label>
                         <input type="text" 
                             value={this.state.person.name} 

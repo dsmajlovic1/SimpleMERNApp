@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simple React app
 
-## Available Scripts
+This is a simple web application using Facebook Graph API to get personal information, store that information locally and enable local editting.
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+The project uses the react-facebook-login library that provides the Facebook login button, React framework was used to create the frontend part of the application and Node and Express were used for backend.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to start the project
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Step 1 - Getting an App ID
 
-### `npm test`
+In order to start the project you need a Graph API App ID because only the developers and a predefined set of users can use a developers App ID. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+First you need to have a Facebook developer account and create an app for your account at http://developers.facebook.com. The application can be a general purpose application ("For everything else") with a display name of your choice. After creating the application you should add "Facebook Login" as a product in the application, setup the login for web and add `http://localhost:3000/` as the site URL.
 
-### `npm run build`
+The App ID provided should be stored in the project directory .env file under REACT_APP_ID
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Step 2 - Install dependencies
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+You should have Node installed in order to start this project. You can check your node version by running `npm -v` in command line. You can get a Node installation on https://www.npmjs.com/get-npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install the needed dependencies by running the following command in the project directory and the /backend/ directory
 
-### `npm run eject`
+`npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Step 3 - Run the app
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run the app by executing the following commands:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`node server` - in the /backend/ directory and 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`npm start` - in the project directory
 
-## Learn More
+The backend server runns on the port 5000 and the frontend on the port 3000 and assumes that the ports aren't running other processes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The application will be run in your default browser at http://localhost:3000/
